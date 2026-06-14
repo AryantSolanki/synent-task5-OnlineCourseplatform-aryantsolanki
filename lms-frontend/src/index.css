@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-stone-50 text-stone-900 antialiased;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-stone-100; }
+  ::-webkit-scrollbar-thumb { @apply bg-stone-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-stone-400; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-600 text-white px-5 py-2.5 rounded-lg font-semibold
+           hover:bg-brand-700 active:bg-brand-800 transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none
+           focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 text-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-stone-800 px-5 py-2.5 rounded-lg font-semibold
+           border border-stone-200 hover:bg-stone-50 active:bg-stone-100
+           transition-colors duration-200 disabled:opacity-50 text-sm;
+  }
+
+  .btn-ghost {
+    @apply text-stone-600 px-4 py-2 rounded-lg font-medium
+           hover:bg-stone-100 hover:text-stone-900 transition-colors duration-200 text-sm;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 border border-stone-200 rounded-lg bg-white
+           text-stone-900 placeholder-stone-400 text-sm
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-card border border-stone-100 overflow-hidden;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-stone-900;
+  }
+}
